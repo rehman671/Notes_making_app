@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_new_flutter/Screens/welcome.dart';
 
 import '../app_button.dart';
 import '../app_textField.dart';
@@ -23,13 +24,19 @@ class Signin extends StatelessWidget{
 
                   const Spacer(),
 
-                  AppButton(label: "Sign up", onPress:onSignInpress)
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => WelcomeScreen()));
+                      },
+                      child: AppButton(label: "Sign up", onPress: onSignInpress))
                 ]
             )
         ));
 
   }
   void onSignInpress(){
+    WelcomeScreen();
 
   }
 
