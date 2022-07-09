@@ -25,7 +25,7 @@ class Signup extends StatelessWidget {
               Text("Welcome\nJoin the community!",
                   style: TextStyle(color: Colors.white, fontSize: 30)),
               SizedBox(height: 47),
-              AppTextFields(placeholder: "Enter you name"),
+              AppTextFields(placeholder: "Enter your name"),
               AppTextFields(placeholder: "Enter your Email Address"),
               AppTextFields(placeholder: "Enter your password"),
               Spacer(),
@@ -54,9 +54,16 @@ class Signup extends StatelessWidget {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (_) => WelcomeScreen()));
                   },
-                  child: AppButton(label: "Sign up", onPress: onSignInpress))
-            ])));
+                  child: AppButton(label: "Sign up", onPress: (){
+                    onSignInpress(context);
+                  }))
+    ]))
+    );
+    }
   }
 
-  void onSignInpress() {}
-}
+  void onSignInpress(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (_) => WelcomeScreen()));
+
+  }

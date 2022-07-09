@@ -12,14 +12,14 @@ class AppButton extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Container(
-              alignment: Alignment.center ,
+          child: GestureDetector(
+            onTap: onPress,
+            child: Container(
+              alignment: Alignment.center,
               padding: const EdgeInsets.all(15),
               decoration:  BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15),border: Border.all(
-                  color: const Color(0xFF454545),
-                  width: 1)),
-            child: GestureDetector(
-              onTap: onPress,
+                    color: const Color(0xFF454545),
+                    width: 1)),
               child: Text(label,style: const TextStyle(
                 fontSize: 15,
                 color: Color(0xFF191720),
